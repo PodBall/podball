@@ -29,3 +29,7 @@ This app is built in Flask, a Python micro-framework.
 4. The project development team will review merge conflicts on GitHub before accepting the pull request
 
 ## Deploying
+
+
+## DeepSpeech
+Read more about DeepSpeech here: https://deepspeech.readthedocs.io/en/v0.9.3/

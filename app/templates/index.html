@@ -6,16 +6,24 @@
   <p class="lead">A productivity app for podcasters - make your editing more efficient by targeting key problems</p>
 </div>
 <div class = "row">
-  <div class = "col-md-6">
+  <div class = "col-md-4">
     <h4>Files</h4>
       <ul>
         <li>File 1 - size/length</li>
         <li>File 2 - size/length</li>
       </ul>
   </div>
-  <div class = "col-md-6">
+  <div class = "col-md-4">
+  <h4>File Upload:</h4>
+    <form action = "/uploader" method = "POST" 
+       enctype = "multipart/form-data">
+       <input type = "file" name = "file" />
+       <input type = "submit"/>
+    </form>
+  </div>
+  <div class = "col-md-4">
     <h4>Options</h4>
-      <button>Speech Analysis</button>
+      <button><a href="/deepspeech">Speech Analysis</a></button>
       <button>Non-Speech Analysis</button>
   </div>
 </div>

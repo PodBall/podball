@@ -59,3 +59,21 @@ def download_file():
     resp.headers["Content-Disposition"] = "attachment; filename=podball-analysis.csv"
     resp.headers["Content-Type"] = "text/csv"
     return resp
+
+@app.route('/analyze')
+def analyze():
+    analysis = speech_client.main()
+    json_data = analysis
+    json_formatted = json.loads(json_data)
+    word, start_time, duration = [],[],[]
+    transcripts = json_formatted['transcripts']
+    transcripts[1]['words']
+    for result in transcripts[1]['words']:
+        word.append(result['word'])
+        start_time.append(result['start_time'])
+        duration.append(result['duration'])
+    
+    df = pd.DataFrame({'word': word, 'start_time' : start_time, 'duration': duration})
+    #jsonresponse = "Response from deep speech."
+    df.to_csv('downloads/podball-analysis.csv')
+    return render_template("deepspeech.html", dsresponse = df)

@@ -9,6 +9,7 @@ import subprocess
 import sys
 import wave
 import json
+import glob
 
 from deepspeech import Model, version
 from timeit import default_timer as timer
@@ -89,10 +90,10 @@ class VersionAction(argparse.Action):
 
 def main():
     
-    #------------------------------------------------
+    audio_files = glob.glob("uploads/*.wav")
     speech_model = "deepspeech-0.9.3-models.pbmm"
     speech_scorer = "deepspeech-0.9.3-models.scorer"
-    speech_audio = "audio/SimpleTest3.wav"
+    speech_audio = audio_files[0]
     print('Loading model from file', file=sys.stderr)
     model_load_start = timer()
     ds = Model(speech_model)

@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Deep Speech{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>Speech Recognition</h1>
+  <p class="lead">Here are the results of the speech analysis:</p>
+  <p>{{ dsresponse.to_html() | safe}}</p>
+  <form action = "" method "GET">
+      <button><a href="/download">Speech Analysis</a></button>
+  </form>
+</div>
+{% endblock %}

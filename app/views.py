@@ -6,6 +6,7 @@ import os
 import json
 import pandas as pd
 import speech_client
+import librosa_functions
 
 @app.route('/')
 def index():
@@ -35,6 +36,11 @@ def deepspeech():
     df.to_csv('downloads/podball-analysis.csv')
     return render_template("deepspeech.html", dsresponse = df)
 
+@app.route('/nonspeech')
+def nonspeech():
+//TODO: Create functions
+    return render_template("nonspeech.html", libresponse=df)
+
 @app.route('/upload')
 def upload():
     return render_template("upload.html")
@@ -57,6 +63,15 @@ def download_file():
         csv = fp.read()
     resp = make_response(csv)
     resp.headers["Content-Disposition"] = "attachment; filename=podball-analysis.csv"
+    resp.headers["Content-Type"] = "text/csv"
+    return resp
+
+@app.route('/downloadNS', methods = ['GET'])
+def download_NS_file():
+    with open("downloads/podball-NS-analysis.csv") as fp:
+        csv = fp.read()
+    resp = make_response(csv)
+    resp.headers["Content-Disposition"] = "attachment; filename=podball-NS-analysis.csv"
     resp.headers["Content-Type"] = "text/csv"
     return resp
 

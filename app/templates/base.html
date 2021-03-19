@@ -1,27 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %}Podball{% endblock %}</title>
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="https://getbootstrap.com/examples/jumbotron-narrow/jumbotron-narrow.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Averia+Libre&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/styles.css') }}">
   </head>
   <body>
     <div class="container">
       <div class="header clearfix">
-        <nav>
-          <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="/">Home</a></li>
-            <li role="presentation"><a href="/about">About</a></li>
-          </ul>
-        </nav>
+        <img id="header-logo" src="static/png/podball-logo-teal-1x.png" alt="podball home link">
       </div>
-      {% block body %}
-      {% endblock %}
-      <footer class="footer">
-        <p>© 2021 PodBall Audio</p>
-      </footer>
+      <div id="pageContent">
+        {% block content %}{% endblock %}
+      </div>
+      <div id="footer">
+        {% block footer %}
+          <p>© 2021 Podball Audio</p>
+        {% endblock %}
+      </div>  
     </div> <!-- /container -->
   </body>
 </html>

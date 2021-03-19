@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block body %}
-<div class="jumbotron">
-  <h1>PodBall Audio</h1>
-  <p class="lead">A productivity app for podcasters - make your editing more efficient by targeting key problems</p>
+
+<div id="leadText">
+  <p>Speed up your podcast editing with a </b>
+  personalized cheat sheet of edits.</p>
 </div>
+
 <div class = "row">
   <div class = "col-md-4">
     <h4>Files</h4>
@@ -24,7 +26,7 @@
   <div class = "col-md-4">
     <h4>Options</h4>
       <button><a href="/deepspeech">Speech Analysis</a></button>
-      <button>Non-Speech Analysis</button>
+      <button><a href="/nonSpeech">Non-Speech Analysis</a></button>
   </div>
 </div>
 {% endblock %}

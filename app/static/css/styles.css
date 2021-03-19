@@ -1,0 +1,30 @@
+h1 {
+  color:blueviolet
+}
+
+#header-logo {
+  position: absolute;
+  left: 13.89%;
+  right: 73.19%;
+  top: 1.27%;
+  bottom: 96.35%;
+}
+
+#leadText {
+  position: absolute;
+  margin-top: 148px;
+  width: 982px;
+  height: 120px;
+  margin-left: 229px;
+
+  font-family: Averia Libre;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 60px;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+  
+  color: #047672;
+}

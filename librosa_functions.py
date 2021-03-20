@@ -10,3 +10,6 @@ import IPython.display as ipd
 
 audio_fpath = "uploads/*.wav"
 audio_clips = os.listdir(audio_fpath)
+
+ns, sr = librosa.load(audio_fpath+audio_clips[1], sr=44100)
+

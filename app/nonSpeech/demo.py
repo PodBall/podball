@@ -1,5 +1,6 @@
 import os
 import matplotlib.pyplot as plt
+import numpy
 
 #for loading and visualizing audio files
 import librosa
@@ -13,29 +14,12 @@ audio_clips = os.listdir(audio_fpath)
 
 
 # Load "speech" and "non-speech" files and visualize its waveform (using librosa)
-ns, sr = librosa.load(audio_fpath+audio_clips[1], sr=44100)
-# s, sr = librosa.load(audio_fpath+audio_clips[2], sr=44100)
-# t, sr = librosa.load(audio_fpath+audio_clips[3], sr=44100)
-
-
-# print(s.shape, sr)
+ns, sr = librosa.load(audio_fpath+audio_clips[0], sr=44100)
 
 # print(ns.shape, sr)
 
-# print(t.shape, sr)
-
-
-plt.figure(figsize=(14, 5))
-librosa.display.waveplot(ns, sr=sr)
-
 # plt.figure(figsize=(14, 5))
-# librosa.display.waveplot(s, sr=sr)
-
-# plt.figure(figsize=(14, 5))
-# librosa.display.waveplot(t, sr=sr)
-
-# plt.ioff()
-# plt.show()
+# librosa.display.waveplot(ns, sr=sr)
 
 #Convert the audio waveform to spectrogram
 
@@ -45,46 +29,25 @@ librosa.display.waveplot(ns, sr=sr)
 # librosa.display.specshow(NSdb, sr=sr, x_axis='time', y_axis='log')
 # plt.colorbar()
 
-# S = librosa.stft(s)
-# Sdb = librosa.amplitude_to_db(abs(S))
-# plt.figure(figsize=(14, 5))
-# librosa.display.specshow(Sdb, sr=sr, x_axis='time', y_axis='hz')
-# plt.colorbar()
-
-# T = librosa.stft(t)
-# Tdb = librosa.amplitude_to_db(abs(T))
-# plt.figure(figsize=(14, 5))
-# librosa.display.specshow(Tdb, sr=sr, x_axis='time', y_axis='hz')
-# plt.colorbar()
-
-# plt.ioff()
-# plt.show()
-
-# Separate harmonics and percussives into two waveforms
+# # Separate harmonics and percussives into two waveforms
 # ns_harmonic, ns_percussive = librosa.effects.hpss(ns)
-# s_harmonic, s_percussive = librosa.effects.hpss(s)
-# t_harmonic, t_percussive = librosa.effects.hpss(s)
 
-#waveform of percussives only
+# #waveform of percussives only
 # plt.figure(figsize=(14, 5))
 # librosa.display.waveplot(ns_percussive, sr=sr)
-# plt.ioff()
-# plt.show()
-
-# plt.figure(figsize=(14, 5))
-# librosa.display.waveplot(s_percussive, sr=sr)
-# plt.ioff()
-# plt.show()
 
 # #zero-crossing-rate - x-axis is number of rolling windows of duration frame_length, beginning every hop_length
-ns_zeros = librosa.feature.zero_crossing_rate(ns, frame_length=4096, hop_length=512)
+ns_zeros = librosa.feature.zero_crossing_rate(ns, frame_length=2048, hop_length=512)
+# ns_zeros_scaled = numpy.divide(ns_zeros, 86.13) 
 plt.figure(figsize=(14, 5))
-librosa.display.waveplot(ns, sr=sr)
+# librosa.display.waveplot(ns, sr=sr)
 plt.plot(ns_zeros[0])
 plt.title("ZCR")
-# plt.ioff()
-# plt.show()
-# print (ns_zeros)
+print(ns_zeros.min())
+print(ns_zeros[0].min())
+print(ns_zeros.max())
+print(ns_zeros[0].max())
+
 
 #agglomerative segmentation by mel cepstrum
 # ns_mfcc = librosa.feature.mfcc(ns)

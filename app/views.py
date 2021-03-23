@@ -16,6 +16,22 @@ def index():
 def about():
     return render_template("about.html")
 
+@app.route('/start_upload')
+def start_upload():
+    return render_template("start_upload.html")
+
+@app.route('/uploader', methods =["GET", "POST"])
+def upload_file():
+    UPLOAD_FOLDER = 'uploads'
+    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+    if request.method == "GET":
+        return render_template("upload.html")
+    if request.method == "POST":
+        f = request.files["file"]
+        filename = secure_filename(f.filename)
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        return "file uploaded successfully"
+
 @app.route('/deepspeech')
 def deepspeech():
     #analysis = os.system("python clientV2.py --audio audio/SimpleTest3.wav --json")
@@ -35,21 +51,6 @@ def deepspeech():
     df.to_csv('downloads/podball-analysis.csv')
     return render_template("deepspeech.html", dsresponse = df)
 
-@app.route('/upload')
-def upload():
-    return render_template("upload.html")
-
-@app.route('/uploader', methods =["GET", "POST"])
-def upload_file():
-    UPLOAD_FOLDER = 'uploads'
-    app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-    if request.method == "GET":
-        return render_template("upload.html")
-    if request.method == "POST":
-        f = request.files["file"]
-        filename = secure_filename(f.filename)
-        f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return "file uploaded successfully"
 
 @app.route('/download', methods = ['GET'])
 def download_file():

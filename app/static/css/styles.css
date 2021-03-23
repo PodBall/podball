@@ -1,21 +1,46 @@
-h1 {
-  color:blueviolet
+.page-content {
+  background-color: #c3ebe9;
 }
 
-#header-logo {
+.start {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 12px;
+
   position: absolute;
-  left: 13.89%;
-  right: 73.19%;
-  top: 1.27%;
-  bottom: 96.35%;
+  width: auto;
+  height: auto;
+  left: 1114px;
+  top: 21px;
+
+  /* Teal 4 */
+
+  background: #18A8A2;
+  border-radius: 4px;
+}
+
+.start a {
+  font-family: Averia Libre;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0px 6px;
 }
 
 #leadText {
   position: absolute;
-  margin-top: 148px;
-  width: 982px;
+  margin-top: 120px;
   height: 120px;
-  margin-left: 229px;
+  width: 100%;
 
   font-family: Averia Libre;
   font-style: normal;
@@ -27,4 +52,243 @@ h1 {
   letter-spacing: 0.02em;
   
   color: #047672;
+}
+
+h2{
+  font-family: Averia Libre;
+  font-weight: 400;
+  font-size: 120px;
+  line-height: 143px;
+  color: #047672;
+  opacity: 0.3;
+}
+
+h5{
+  font-family: Averia Libre;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+}
+
+#polygon-text p {
+  font-family: Baloo Tamma 2;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.02em;
+  color: #ffffff
+}
+
+#one h2 {
+  position: absolute;
+  width: 34px;
+  height: 95px;
+  left: 390px; 
+  top: 290px;
+}
+
+#one h5 {
+  position: absolute;
+  width: 97px;
+  height: 32px;
+  /* left: 337px; */
+  left: 242px;
+  top: 475px;
+}
+
+#one p {
+  position: absolute;
+  width: 282px;
+  height: 48px;
+  left: 242.19px;
+  top: 524px;
+}
+
+#two h2 {
+  position: absolute;
+  width: 54px;
+  height: 119px;
+  left: 948px;
+  top: 454px;
+}
+
+#two h5{
+  position: absolute;
+  width: 295px;
+  height: 64px;
+  left: 827.72px;
+  top: 669px;
+}
+
+#two p{
+  position: absolute;
+  width: 310px;
+  height: 72px;
+  left: 828px;
+  top: 747px;
+}
+
+#three h2{
+  position: absolute;
+  width: 64px;
+  height: 143px;
+  left: 294px;
+  top: 765px;
+}
+
+#three h5{
+  position: absolute;
+  width: 254px;
+  height: 64px;
+  left: 200px;
+  top: 1000px;
+}
+
+#three p {
+  position: absolute;
+  width: 307px;
+  height: 120px;
+  left: 200px;
+  top: 1120px;
+}
+
+#four h2 {
+  position: absolute;
+  width: 76px;
+  height: 161px;
+  left: 918px;
+  top: 1057px;
+}
+
+#four h5 {
+  position: absolute;
+  width: 309.18px;
+  height: 32px;
+  left: 794.95px;
+  top: 1288px;
+}
+
+#four p {
+  position: absolute;
+  width: 363px;
+  height: 96px;
+  left: 794.95px;
+  top: 1327px;
+}
+
+.action{
+  background: #4C2A7C;
+  box-shadow: -6px 8px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  width: 282px;
+  height: 75px;
+  padding: 0px 16px;
+  font-family: Averia Libre;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 18px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+a {
+  color: #F8F3FF
+}
+
+.wallpaper {
+  background-image: url(../png/bg-wave-1x.png);
+  width: auto;
+  height: 900px;
+  display: block;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.action-window {
+  position: absolute;
+  width: 550px;
+  height: auto;
+  left: 445px;
+  top: 128px;
+  padding: 55px;
+  padding-bottom: 35px;
+  background: #FFFFFF;
+  box-shadow: -8px 8px 40px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  justify-content: center;
+}
+
+#file-box {
+  border: #13B8AE;
+  border-width: 3px;
+  border-style: dotted;
+  border-radius: 10px;
+  padding-top: 40px;
+  width: 434px;
+  height: 223px;
+  display: flex;
+  justify-content: center;
+}
+
+#file-box img {
+  padding-bottom: 15px;
+  display: flex;
+  margin: auto;
+}
+
+#submit {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  border: none;
+  font-family: Baloo Tamma 2;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  text-decoration-line: underline;
+  color: #047672;
+  background-color: #FFFFFF;
+  display: flex;
+}
+
+.action-window h5 {
+  font-family: Averia Libre;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #047672;
+}
+
+.action-window h4 {
+  font-family: Averia Libre;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 36px;
+  text-align: center;
+  color: #9BD8D5;
+  z-index: 0;
+}
+
+.ball-numbers {
+  margin-left: 60px;
+  letter-spacing: 80px;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.ball-numbers img {
+  width: 58px;
+  height: 110px;
+  display: block;
+  z-index: 1;
 }

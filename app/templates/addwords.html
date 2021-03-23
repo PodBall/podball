@@ -1,12 +1,14 @@
 {% extends "base.html" %}
-{% block title %}Deep Speech{% endblock %}
+{% block title %}Adding Words{% endblock %}
 {% block body %}
 <div class="jumbotron">
-<h1>Speech Recognition</h1>
+    <h1>Filtered Response</h1>
     <div class= "row">
         <div class = "col-md-6">
           <p class="lead">Here are the results of the speech analysis:</p>
-          <p>{{ dsresponse.to_html() | safe}}</p>
+          {% if result|length %}
+          <p>{{ result.to_html() | safe}}</p>
+          {% endif %}
           <form action = "" method "GET">
               <button><a href="/download">Download Speech Analysis</a></button>
           </form>
@@ -16,6 +18,9 @@
            Search Word: <input type="text" name="searchword" required><br>
            <input type="submit" value="Submit">
           </form>
+          {% if search %}
+          <h1>Detecting words: {{ search }} </h1>
+          {% endif %}
     </div>
 </div>
 {% endblock %}

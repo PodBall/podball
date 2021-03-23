@@ -77,3 +77,12 @@ def analyze():
     #jsonresponse = "Response from deep speech."
     df.to_csv('downloads/podball-analysis.csv')
     return render_template("deepspeech.html", dsresponse = df)
+
+@app.route('/addwords', methods = ['POST'])
+def addwords():
+    searchwords = request.form.get("searchword")
+    analysis_df = pd.read_csv("downloads/podball-analysis.csv", index_col=0)
+    #searchwords = "name"
+    filtered = analysis_df['word'] == searchwords
+    filtered_df = analysis_df[filtered]
+    return render_template("addwords.html", search=searchwords, result=filtered_df)

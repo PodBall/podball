@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+
+  <div class="wallpaper">
+    <div class="action-window">
+      <div class="row">
+        <h4 class="ball-numbers"><span class="done">1</span><span class="selected"><img src="../static/png/tennis-ball-orange-purple-1x.png"><span class="ball-text" id="ball-2">2</span></span><span>3</span><span>4</span></h4>
+      </div>
+      <h5>What would you like to detect today?</h5>
+        <form class="choices">
+            <input type="checkbox" id="um"> <div class="pill">um's and ah's  <span class="info">i</span></div> 
+            <div class="info-hover" id="ums"><span class="hover-text">Podball will look for sounds like umm, ahh, uhh, etc. You can add more words to your search later.</span><img src="../static/png/ums-and-ahs-popup-1x.png"></div>
+            <input type="checkbox" id="um"> <div class="pill">unexpected sounds  <span class="info">i</span></div>
+            <div class="info-hover" id="sounds"><span class="hover-text">Podball will look for sounds like coughs, rustling papers, sirens and more.</span><img src="../static/png/unexpected-sounds-popup-1x.png"></div>
+            <input type="checkbox" id="um"> <div class="pill">long pauses  <span class="info">i</span></div>
+            <div class="info-hover" id="pauses"><span class="hover-text">Podball will find pauses of longer than 1.5 seconds.</span><img src="../static/png/pauses-popup-1x.png"></div>
+        </form> 
+        <button form="choices" class="submit" type="submit">START SEARCHING!</button>
+        <a class="next" href="/search"><span class="next-text">NEXT</span> <img src="../static/png/arrow-right-circle.png"></a>
+      </div>
+   </div>
+
+{% endblock %}
+
+         <!-- <button><a href="/deepspeech">Speech Analysis</a></button>
+         <button><a href="/nonSpeech">Non-Speech Analysis</a></button> -->

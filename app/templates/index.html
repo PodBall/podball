@@ -1,30 +1,103 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
-{% block body %}
-<div class="jumbotron">
-  <h1>PodBall Audio</h1>
-  <p class="lead">A productivity app for podcasters - make your editing more efficient by targeting key problems</p>
-</div>
-<div class = "row">
-  <div class = "col-md-4">
-    <h4>Files</h4>
-      <ul>
-        <li>File 1 - size/length</li>
-        <li>File 2 - size/length</li>
-      </ul>
+{% block content %}
+
+  <button class="start"><a href="/start_upload">GET STARTED!</a></button>
+  <div id="leadText">
+    <p>Speed up your podcast editing with a <br/>
+    personalsized cheat sheet of edits.</p>
   </div>
-  <div class = "col-md-4">
-  <h4>File Upload:</h4>
-    <form action = "/uploader" method = "POST" 
-       enctype = "multipart/form-data">
-       <input type = "file" name = "file" />
-       <input type = "submit"/>
-    </form>
+  <div style="margin-left: calc(50% - 50vw);
+              width: 100vw;">
+    <svg width="100%" height="100%" viewBox="0 0 1174 1075" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-top:360px; width:inherit;">
+    <g filter="url(#filter0_d)">
+      <path d="M569.048 680.1C567.628 671.813 574.984 664.639 583.248 666.25L1080.53 763.24C1086.55 764.414 1090.69 769.932 1090.13 776.037L1072.52 968.518C1071.98 974.41 1067.22 979.052 1061.31 979.452L636.163 1008.19C630.038 1008.61 624.609 1004.35 623.575 998.312L569.048 680.1Z" fill="#047672"/>
+    </g>
+    <g filter="url(#filter1_d)">
+      <path d="M65.4459 516.421C64.6036 510.275 68.5851 504.5 74.629 503.101L397.395 428.4C403.18 427.061 409.075 430.154 411.259 435.676L539.715 760.319C542.454 767.241 538.295 774.961 531.008 776.481L125.625 861.052C118.817 862.473 112.23 857.825 111.286 850.934L65.4459 516.421Z" fill="#047672"/>
+    </g>
+    <g filter="url(#filter2_d)">
+      <path d="M628.258 201.999C629.157 195.731 634.771 191.24 641.083 191.739L1041.82 223.432C1047.31 223.867 1051.8 227.986 1052.71 233.42L1103.64 538.723C1104.97 546.701 1098.19 553.684 1090.18 552.587L599.839 485.422C593.244 484.518 588.644 478.42 589.589 471.83L628.258 201.999Z" fill="#047672"/>
+    </g>
+    <g filter="url(#filter3_d)">
+      <path d="M154.885 46.3456C155.094 38.8708 162.014 33.4048 169.333 34.9331L539.99 112.321C546.477 113.676 550.638 120.033 549.284 126.521L523.76 248.768C522.67 253.988 518.267 257.862 512.951 258.279L161.489 285.833C154.381 286.391 148.357 280.663 148.556 273.536L154.885 46.3456Z" fill="#047672"/>
+    </g>
+    <defs>
+      <filter id="filter0_d" x="520.871" y="634.022" width="601.307" height="422.198" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dx="-8" dy="8"/>
+        <feGaussianBlur stdDeviation="20"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+      </filter>
+      <filter id="filter1_d" x="0.931641" y="380.313" width="587.374" height="548.687" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dx="-8" dy="8"/>
+        <feGaussianBlur stdDeviation="20"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+      </filter>
+      <filter id="filter2_d" x="539.266" y="140.299" width="634.18" height="461.775" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dx="-8" dy="8"/>
+        <feGaussianBlur stdDeviation="20"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+      </filter>
+      <filter id="filter3_d" x="58.959" y="0.479858" width="524.776" height="404.758" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+        <feOffset dx="-8" dy="8"/>
+        <feGaussianBlur stdDeviation="20"/>
+        <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+      </filter>
+    </defs>
+    </svg>
   </div>
-  <div class = "col-md-4">
-    <h4>Options</h4>
-      <button><a href="/deepspeech">Speech Analysis</a></button>
-      <button>Non-Speech Analysis</button>
+  <div id="polygon-text">
+    <div class="numbers" id="one">
+      <h2>1</h2>
+    </div>
+    <div class="copy" id="one">
+      <h5>UPLOAD</h5>
+      <p>First, upload your podcast audio <b>.wav</b> file. </p>
+    </div>
+    <div class="numbers" id="two">
+      <h2>2</h2>
+    </div>
+    <div class="copy" id="two">
+      <h5>CHOOSE WHAT YOU'D LIKE TO DETECT</h5>
+      <p>Choose which instances you’d like to detect. The choices include <b>ums & ahs, unexpected sounds,</b> and <b>pauses.</b></p>
+    </div>
+    <div class="numbers" id="three">
+      <h2>3</h2>
+    </div>
+    <div class="copy" id="three">
+      <h5>ADD WORDS OR PHRASES TO YOUR SEARCH</h5>
+      <p>Add any words or phrases you’d like Podball to detect. This can come in handy if you want to search for <b>filler words, swear words,</b> or <b>specific phrases</b> you’d like to find easily.</p>
+    </div>
+    <div class="numbers" id="four">
+      <h2>4</h2>
+    </div>
+    <div class="copy" id="four">
+      <h5>PREVIEW & DOWNLOAD</h5>
+      <p>Preview your list of edits and see a breakdown of all the sounds and words detected. Download your <b>cheat sheet</b> as a <b>CSV</b> and speed up your podcasting workflow!</p>
+    </div>
   </div>
-</div>
+    
+
+  <button class="action">
+    <a style="color: #F8F3FF" href="/start_upload">GET STARTED!</a>
+  </button>
+
+
+
 {% endblock %}

@@ -12,9 +12,9 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/about')
-def about():
-    return render_template("about.html")
+@app.route('/choices')
+def choices():
+    return render_template("choices.html")
 
 @app.route('/start_upload')
 def start_upload():

@@ -4,7 +4,7 @@
 
    <div class="wallpaper">
       <div class="action-window">
-         <h4 class="ball-numbers"><span id="ball-1"><img src="../static/png/tennis-ball-orange-purple-1x.png">1</span><span>2</span><span>3</span><span>4</span></h4>
+         <h4 class="ball-numbers"><span class="ball-here"><img src="../static/png/tennis-ball-orange-purple-1x.png"><span class="ball-text" id="ball-1">1</span></span><span>2</span><span>3</span><span>4</span></h4>
          <h5>Choose an audio file to analyze.</h5>
          <div id="file-box">
             <form action = "/uploader" method = "POST" 
@@ -12,9 +12,10 @@
             <img src="../static/png/upload-1x.png" id="upfile1" style="cursor:pointer" onclick="document.getElementById('upfile').click()">
             <input type="file" id="upfile" name="file" style="display:none" />
             <h5>Click to upload your file.</h5>
-            <button id="submit" type="submit">SUBMIT FILE</button>
+            <button class="submit" type="submit">SUBMIT FILE</button>
          </form>
          </div>
+         <a class="next" href="/choices"><span class="next-text">NEXT</span> <img src="../static/png/arrow-right-circle.png"></a>
       </div>
    </div>
 

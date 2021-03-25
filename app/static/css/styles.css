@@ -435,9 +435,9 @@ a {
 }
 
 .words {
-  position: flex;
+  position: relative;
   display: flex;
-  width: 340px;
+  width: 380px;
   /* height: 41px;
   left: 550px;
   top: 361px; */
@@ -446,9 +446,10 @@ a {
 
   background: #F8F3FF;
   border-radius: 20px;
+  justify-content: center;
 }
 
-.words p {
+#searchword {
   font-family: Baloo Tamma 2;
   font-size: 16px;
   line-height: 18px;
@@ -456,22 +457,42 @@ a {
   align-items: center;
   color:#4C2A7C;
   margin-top: 10px;
+  border: none;
+  background-color: #F8F3FF;
+  margin-left: -50px;
+  z-index: 100;
 }
 
-.words input {
+#addbutton {
   font-family: Averia Libre;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 18px;
   display: flex;
-  align-items: center;
+  position: relative;
   text-align: center;
   color: #4C2A7C;
+  margin-left: 50px;
 }
 
-.words a {
-  max-width: 100px;
+#analyze {
+  margin-top: 30px;
+  margin-left: 150px;
+  border: solid 1px;
+  border-radius: 4px;
+  border-color:#047672;
+  text-align: center;
+  font-family: Averia Libre;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 18px;
+  color: #FFFFFF;
+  background-color: #047672;
+  position: relative;
   display: flex;
+  padding: 8px;
+  max-width: 150px;
 }
 

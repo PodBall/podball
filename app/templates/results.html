@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}Deep Speech{% endblock %}
+{% block body %}
+
+<div class="wallpaper">
+  <div class="action-window">
+    <div class="row">
+      <h4 class="ball-numbers"><span class="done">1</span><span class="done">2</span><span class="done">3</span><span class="selected"><img src="../static/png/tennis-ball-orange-purple-1x.png"><span class="ball-text" id="ball-4">4</span></h4>
+    </div>
+    <h5>Summary & Download</h5>
+
+    <h3>11 Instances Detected</h3>
+
+    <div class="pill">um's and ah's (6)</div> <div class="pill">long pauses (2)</div> <div class="pill">unexpected sounds (2)</div>
+    <div class="pill">process (1)</div> <div class="pill">damn (0)</div>
+    <div class= "row">
+        <div class = "col-md-6">
+          <p class="lead">Here are the results of the speech analysis:</p>
+          <p>{{ dsresponse.to_html() | safe}}</p>
+          <form action = "" method "GET">
+              <button><a href="/download">Download Speech Analysis</a></button>
+          </form>
+        </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

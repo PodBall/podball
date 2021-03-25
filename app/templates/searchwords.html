@@ -6,11 +6,11 @@
     <h4 class="ball-numbers"><span class="done">1</span><span class="done">2</span><span class="selected"><img src="../static/png/tennis-ball-orange-purple-1x.png"><span class="ball-text" id="ball-3">3</span><span>4</span></h4>
 
     <h5>Add any specific words or phrases you'd like to detect.</h5>
-    <form class="words">
+    <form class="words" method="POST" action="/results">
       <input id="searchword" type="text" name="searchword" placeholder="Type your word here!"><br>
-      <input id="addbutton" type="submit" value="ADD">
+      <input id="addbutton" type="submit" value="ADD" disabled>
     </form>
-    <a id="analyze" href="/analyze">ANALYZE MY AUDIO</a>
+    <a id="analyze" href="/results">ANALYZE MY AUDIO</a>
     </div>
   
 

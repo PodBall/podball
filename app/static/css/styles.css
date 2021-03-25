@@ -347,6 +347,11 @@ a {
   z-index: 100;
 }
 
+#ball-4 {
+  margin-left: -38px;
+  z-index: 100;
+}
+
 .selected {
   max-height: 58px;
   display: inherit;
@@ -496,3 +501,45 @@ a {
   max-width: 150px;
 }
 
+.action-window h3 {
+  font-family: Averia Libre;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 18px;
+  text-align: center;
+  color: #047672;
+}
+
+.pill2 {
+  display: inline-block;
+  position: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin: 15px;
+  padding: 12px;
+  border-radius: 32px;
+  font-family: Averia Libre;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 18px;
+  color: #ffffff;
+  border-color: #FFFFFF;
+  text-align: center;
+  background: #18A8A2;
+  width: fit-content;
+}
+
+#download {
+  font-family: Averia Libre;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color:#4C2A7C;
+  margin: 15px;
+  padding: 10px;
+  background-color: #F8F3FF;
+}
+  

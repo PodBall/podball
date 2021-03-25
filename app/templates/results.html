@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Deep Speech{% endblock %}
-{% block body %}
+{% block content %}
 
 <div class="wallpaper">
   <div class="action-window">
@@ -9,22 +9,21 @@
     </div>
     <h5>Summary & Download</h5>
 
-    <h3>5 Instances Detected</h3>
+    <h3>5 <span style=color:black>instances detected</span></h3>
 
-    <div class="pill">um's and ah's (4)</div> <div class="pill">long pauses (0)</div> <div class="pill">unexpected sounds (0)</div>
-    <div class="pill">process (1)</div> <div class="pill">damn (0)</div>
+    <div class="pill2">um's and ah's (4)</div> <div class="pill2">long pauses (0)</div> <div class="pill2">unexpected sounds (0)</div>
+    <div class="pill2">process (1)</div> 
     <div class= "row">
         <div class = "col-md-6">
-          <p class="lead">Here are the results of the speech analysis:</p>
-          <p>{{ dsresponse.to_html() | safe}}</p>
+          <h5 class="lead">Results Preview:</h5>
                 <div id="file-box">
             {% if result|length %}
             <p>{{ result.to_html() | safe}}</p>
             {% endif %}
             <form action = "" method "GET">
-              <button><a href="/download">Download .CSV</a></button>
+              <button id="download"><a href="/download">Download .CSV</a></button>
             </form>
-         </div>
+          </div>
         </div>
 
     </div>

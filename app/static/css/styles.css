@@ -257,6 +257,7 @@ a {
   background-color: #047672;
   display: flex;
   padding: 4px;
+  width: auto;
 }
 
 .action-window h5 {
@@ -337,6 +338,11 @@ a {
 }
 
 #ball-2 {
+  margin-left: -38px;
+  z-index: 100;
+}
+
+#ball-3 {
   margin-left: -38px;
   z-index: 100;
 }
@@ -428,4 +434,44 @@ a {
   color: #FFFFFF;
 }
 
+.words {
+  position: flex;
+  display: flex;
+  width: 340px;
+  /* height: 41px;
+  left: 550px;
+  top: 361px; */
+
+  /* Purple 4 */
+
+  background: #F8F3FF;
+  border-radius: 20px;
+}
+
+.words p {
+  font-family: Baloo Tamma 2;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  color:#4C2A7C;
+  margin-top: 10px;
+}
+
+.words input {
+  font-family: Averia Libre;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #4C2A7C;
+}
+
+.words a {
+  max-width: 100px;
+  display: flex;
+}
 

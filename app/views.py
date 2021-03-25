@@ -74,9 +74,9 @@ def addwords():
     filtered_df = analysis_df[filtered]
     return render_template("addwords.html", search=searchwords, result=filtered_df)
 
-@app.route('/search')
-def search():
-    return render_template("search.html")
+# @app.route('/search')
+# def search():
+#     return render_template("search.html")
 
 @app.route('/results')
 def results():

@@ -1,12 +1,23 @@
 {% extends "base.html" %}
-{% block title %}Home{% endblock %}
-{% block content %}
+{% block title %}Deep Speech{% endblock %}
+{% block body %}
 
 <div class="wallpaper">
-      <div class="action-window">
-         <h4 class="ball-numbers"><span class="ball-here"><img src="../static/png/tennis-ball-orange-purple-1x.png"><span class="ball-text" id="ball-4">1</span></span><span>2</span><span>3</span><span>4</span></h4>
-         <h5>Summary & Download</h5>
-         <div id="file-box">
+  <div class="action-window">
+    <div class="row">
+      <h4 class="ball-numbers"><span class="done">1</span><span class="done">2</span><span class="done">3</span><span class="selected"><img src="../static/png/tennis-ball-orange-purple-1x.png"><span class="ball-text" id="ball-4">4</span></h4>
+    </div>
+    <h5>Summary & Download</h5>
+
+    <h3>5 Instances Detected</h3>
+
+    <div class="pill">um's and ah's (4)</div> <div class="pill">long pauses (0)</div> <div class="pill">unexpected sounds (0)</div>
+    <div class="pill">process (1)</div> <div class="pill">damn (0)</div>
+    <div class= "row">
+        <div class = "col-md-6">
+          <p class="lead">Here are the results of the speech analysis:</p>
+          <p>{{ dsresponse.to_html() | safe}}</p>
+                <div id="file-box">
             {% if result|length %}
             <p>{{ result.to_html() | safe}}</p>
             {% endif %}
@@ -14,8 +25,9 @@
               <button><a href="/download">Download .CSV</a></button>
             </form>
          </div>
-         <!-- <a class="next" href="/results"><span class="next-text">NEXT</span> <img src="../static/png/arrow-right-circle.png"></a> -->
-      </div>
-   </div>
+        </div>
 
+    </div>
+  </div>
+</div>
 {% endblock %}

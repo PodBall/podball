@@ -9,17 +9,22 @@
     </div>
     <h5>Summary & Download</h5>
 
-    <h3>11 Instances Detected</h3>
+    <h3>5 Instances Detected</h3>
 
-    <div class="pill">um's and ah's (6)</div> <div class="pill">long pauses (2)</div> <div class="pill">unexpected sounds (2)</div>
+    <div class="pill">um's and ah's (4)</div> <div class="pill">long pauses (0)</div> <div class="pill">unexpected sounds (0)</div>
     <div class="pill">process (1)</div> <div class="pill">damn (0)</div>
     <div class= "row">
         <div class = "col-md-6">
           <p class="lead">Here are the results of the speech analysis:</p>
           <p>{{ dsresponse.to_html() | safe}}</p>
-          <form action = "" method "GET">
-              <button><a href="/download">Download Speech Analysis</a></button>
-          </form>
+                <div id="file-box">
+            {% if result|length %}
+            <p>{{ result.to_html() | safe}}</p>
+            {% endif %}
+            <form action = "" method "GET">
+              <button><a href="/download">Download .CSV</a></button>
+            </form>
+         </div>
         </div>
 
     </div>

@@ -73,3 +73,16 @@ def addwords():
     filtered = analysis_df['word'] == searchwords
     filtered_df = analysis_df[filtered]
     return render_template("addwords.html", search=searchwords, result=filtered_df)
+
+@app.route('/search')
+def search():
+    return render_template("search.html")
+
+@app.route('/results')
+def results():
+    #searchwords = request.form.get("searchword")
+    analysis_df = pd.read_csv("downloads/podball-analysis.csv", index_col=0)
+    #searchwords = "name"
+    #filtered = analysis_df['word'] == searchwords
+    filtered_df = analysis_df
+    return render_template("results.html", result=filtered_df)

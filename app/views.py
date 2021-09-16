@@ -13,10 +13,11 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/about')
-def about():
-    return render_template("about.html")
+@app.route('/choices')
+def choices():
+    return render_template("choices.html")
 
+<<<<<<< HEAD
 @app.route('/deepspeech')
 def deepspeech():
     #analysis = os.system("python clientV2.py --audio audio/SimpleTest3.wav --json")
@@ -44,6 +45,11 @@ def nonspeech():
 @app.route('/upload')
 def upload():
     return render_template("upload.html")
+=======
+@app.route('/start_upload')
+def start_upload():
+    return render_template("start_upload.html")
+>>>>>>> master
 
 @app.route('/uploader', methods =["GET", "POST"])
 def upload_file():
@@ -57,14 +63,9 @@ def upload_file():
         f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
         return "file uploaded successfully"
 
-@app.route('/download', methods = ['GET'])
-def download_file():
-    with open("downloads/podball-analysis.csv") as fp:
-        csv = fp.read()
-    resp = make_response(csv)
-    resp.headers["Content-Disposition"] = "attachment; filename=podball-analysis.csv"
-    resp.headers["Content-Type"] = "text/csv"
-    return resp
+@app.route('/searchwords')
+def searchwords():
+    return render_template("searchwords.html")
 
 @app.route('/downloadNS', methods = ['GET'])
 def download_NS_file():
@@ -91,4 +92,37 @@ def analyze():
     df = pd.DataFrame({'word': word, 'start_time' : start_time, 'duration': duration})
     #jsonresponse = "Response from deep speech."
     df.to_csv('downloads/podball-analysis.csv')
-    return render_template("deepspeech.html", dsresponse = df)
+    return render_template("results.html", dsresponse = df)
+
+
+@app.route('/download', methods = ['GET'])
+def download_file():
+    with open("downloads/podball-analysis.csv") as fp:
+        csv = fp.read()
+    resp = make_response(csv)
+    resp.headers["Content-Disposition"] = "attachment; filename=podball-analysis.csv"
+    resp.headers["Content-Type"] = "text/csv"
+    return resp
+
+        
+@app.route('/addwords', methods = ['POST'])
+def addwords():
+    searchwords = request.form.get("searchword")
+    analysis_df = pd.read_csv("downloads/podball-analysis.csv", index_col=0)
+    #searchwords = "name"
+    filtered = analysis_df['word'] == searchwords
+    filtered_df = analysis_df[filtered]
+    return render_template("addwords.html", search=searchwords, result=filtered_df)
+
+# @app.route('/search')
+# def search():
+#     return render_template("search.html")
+
+@app.route('/results')
+def results():
+    #searchwords = request.form.get("searchword")
+    analysis_df = pd.read_csv("downloads/podball-analysis.csv", index_col=0)
+    #searchwords = "name"
+    #filtered = analysis_df['word'] == searchwords
+    filtered_df = analysis_df
+    return render_template("results.html", result=filtered_df)

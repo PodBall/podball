@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Unexpected Non-Speech Sounds{% endblock %}
+{% block body %}
+<div class="jumbotron">
+  <h1>Sound Filtering</h1>
+  <p class="lead">Here are some problem areas where you may find non-speech sounds:</p>
+  <p>{{ dsresponse.to_html() | safe}}</p>
+  <form action = "" method "GET">
+      <button><a href="/downloadNS">Unexpected Sounds</a></button>
+  </form>
+</div>
+{% endblock %}
